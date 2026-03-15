@@ -1,0 +1,68 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "The Rise of Artificial Intelligence",
+      "author": "Victor",
+      "category": "Technology",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+      "content": "Artificial Intelligence is transforming industries across the world. From healthcare to finance, AI systems are improving efficiency, automating tasks, and enabling new innovations."
+    },
+    {
+      "id": 2,
+      "title": "Getting Started with React",
+      "author": "James Arthur",
+      "category": "Programming",
+      "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
+      "content": "React is one of the most popular JavaScript libraries for building user interfaces. It allows developers to create reusable components and build fast single-page applications."
+    },
+    {
+      "id": 3,
+      "title": "Understanding Databases for Developers",
+      "author": "Auditor General",
+      "category": "Database",
+      "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d",
+      "content": "Databases are essential for storing and managing application data. Developers must understand concepts like tables, relationships, and queries to build efficient applications."
+    },
+    {
+      "id": 4,
+      "title": "Why Cybersecurity Matters",
+      "author": "Jane Howard",
+      "category": "Security",
+      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
+      "content": "Cybersecurity protects systems, networks, and programs from digital attacks. Organizations invest heavily in security to protect sensitive information and maintain trust."
+    },
+    {
+      "id": 5,
+      "title": "Introduction to Cloud Computing",
+      "author": "Nancy Loice",
+      "category": "Cloud",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
+      "content": "Cloud computing allows businesses to access computing resources over the internet instead of relying on local servers or personal devices."
+    },
+    {
+      "id": 6,
+      "title": "Web Development Trends in 2026",
+      "author": "Caleb Victor",
+      "category": "Web Development",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      "content": "Modern web development focuses on performance, scalability, and user experience. Frameworks and tools continue to evolve rapidly."
+    },
+    {
+      "id": 7,
+      "title": "Learning JavaScript the Smart Way",
+      "author": "Charles Victor",
+      "category": "Programming",
+      "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479",
+      "content": "JavaScript powers the modern web. Learning concepts like asynchronous programming, ES6 features, and frameworks will improve your development skills."
+    },
+    {
+      "id": 8,
+      "title": "The Importance of UI/UX Design",
+      "author": "Mercy Victor",
+      "category": "Design",
+      "image": "https://images.unsplash.com/photo-1559028012-481c04fa702d",
+      "content": "User Interface and User Experience design ensure that applications are intuitive and enjoyable for users. Good design can greatly impact user satisfaction."
+    }
+  ]
+}
