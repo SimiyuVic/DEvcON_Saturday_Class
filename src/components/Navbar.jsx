@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
     return ( 
         <div>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary">
-                <div className="container-fluid">
+            <nav className="navbar navbar-expand-lg bg-warning navbar-dark fw-bold">
+                <div className="container ">
                     <Link className="navbar-brand" to="/">
                         DEvcOn
                     </Link>
@@ -27,9 +27,14 @@ const Navbar = () => {
                         </Link>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link active" to="/users">
-                            Users
-                        </Link>
+                            <Link className="nav-link active" to="/add-blog">
+                                Add Blog
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link active" to="/users">
+                                Users
+                            </Link>
                         </li>
                     </ul>
                     </div>

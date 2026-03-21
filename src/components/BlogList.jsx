@@ -24,7 +24,7 @@ const BlogList = ({blogData, title}) => {
                                     </h5>
 
                                     <p className="card-text text-muted small">
-                                        {blog.content.substring(0,70)}  . . .
+                                        {blog.content}  . . .
                                     </p>
 
                                     <Link className="btn btn-outline-primary btn-sm" to={`/blogs/${blog.id}`}>

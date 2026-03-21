@@ -1,59 +1,48 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 
-const AddBlog = () => {
+const EditBlog = () => {
 
-    const [author, setAuthor] = useState('');
-    const [title, setTitle] = useState('');
-    const [category, setCategory] = useState('');
-    const [content, setContent] = useState('');
+    const [author, setAuthor] = useState([]);
+    const [title, setTitle] = useState([]);
+    const [category, setCategory] = useState([]);
+    const [content, setContent] = useState([]);
     const [error, setError] = useState(null);
-    const [publish, setPublish] = useState(true);
 
     const navigate = useNavigate();
+    const {id} = useParams();
 
-    const handlePublish = (e) => {
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`http://localhost:5000/blogs/${id}`)
+                setAuthor(response.data.author);
+                setTitle(response.data.title);
+                setCategory(response.data.category);
+                setContent(response.data.content);
+            }
+            catch(error)
+            {
+                setError(error.message)
+            }
+        }
+        fetchData();
+    }, [id])
+
+    const handleEdit = (e) => {
         e.preventDefault();
+        const editData = {author, title, category, content}
 
-        const publishData = {author, title, category, content}
-
-        // fetch("http://localhost:5000/blogs", {
-        //     method: 'POST',
-        //     headers: {
-        //         "Content-Type" : "application/json"
-        //     },
-        //     body: JSON.stringify(publishData)
-        // })
-        // .then(() => {
-        //     navigate("/");
-        // })
-
-        // const postData =  async () => {
-        //    try {
-        //      const response = await axios.post("http://localhost:5000/blogs", publishData)
-        //      setPublish(response)
-
-        //    }
-        //    catch(error)
-        //    {
-        //     setError(error.message)
-        //    }
-        //    finally{
-        //     console.log("Blog Added!")
-        //    }
-        // }
-        // postData();
-        axios
-        .post("http://localhost:5000/blogs", publishData)
+        axios.put(`http://localhost:5000/blogs/${id}`, editData)
         .then(() => {
             navigate("/");
-            setPublish(false);
         })
-        .catch((error) => {
-            setError(error.message)
+        .catch(error => {
+            console.log(error.message)
         })
+
     }
 
     return ( 
@@ -62,9 +51,9 @@ const AddBlog = () => {
             <div className="row justify-content-center m-1">
                 <div className="col-md-7 card shadow-lg p-2">
                 <h4 className="text-center text-muted">
-                    Create Your Blogs!
+                    Edit Your Blogs!
                 </h4>
-                    <form onSubmit={handlePublish}>
+                    <form onSubmit={handleEdit}>
                         <div className="mb-3">
                             <label className="form-label">
                                 Author's Name
@@ -101,7 +90,7 @@ const AddBlog = () => {
                             value={category}
                             onChange={(e) => setCategory(e.target.value)}
                             >
-                                <option value="#">Select Category</option>
+                                <option value="">Select Category</option>
                                 <option value="Technology">Technology</option>
                                 <option value="Health">Health</option>
                                 <option value="Business">Business</option>
@@ -120,12 +109,9 @@ const AddBlog = () => {
                             />
                         </div>
                         <div className="mb-3">
-                            {publish && <button className="btn btn-outline-primary w-100 btn-sm">
-                                Publish Blog
-                            </button>}
-                            {!publish && <button className="btn btn-warning w-100 btn-sm disabled">
-                                Publishing Blog . . .
-                            </button>}
+                            <button className="btn btn-outline-primary w-100 btn-sm">
+                                Edit Blog
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -134,4 +120,4 @@ const AddBlog = () => {
      );
 }
  
-export default AddBlog;
+export default EditBlog;
